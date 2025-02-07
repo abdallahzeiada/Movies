@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأفلام والمسلسلات المصرية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Dark mode toggle switch -->
+    <div class="dark-mode-toggle">
+        <!-- <label for="dark-mode">الوضع الليلي</label> -->
+        <input type="checkbox" id="dark-mode">
+    </div>
+
+    <div class="container">
+        <h1>الأفلام والمسلسلات المصرية</h1>
+        <div class="controls">
+            <select id="year">
+                <!-- Options will be dynamically added by JavaScript -->
+            </select>
+            <button onclick="fetchMovies()">عرض</button>
+        </div>
+        <div id="results">
+            <div class="movies">
+                <h2>الأفلام</h2>
+                <!-- Movies will be dynamically added here -->
+            </div>
+            <div class="tv-shows">
+                <h2>المسلسلات</h2>
+                <!-- TV shows will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

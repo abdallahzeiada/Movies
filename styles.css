@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh;
+  direction: rtl; /* RTL for Arabic */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode select {
+  background-color: #333;
+  color: #fff;
+  border: 10px solid #1e1e1e;
+  outline: 2px solid #555;
+}
+
+body.dark-mode button {
+  background-color: #7a5acd;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #8a6acd;
+}
+
+.container {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 50%;
+  width: 90%;
+  margin: 20px auto;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+h1 {
+    font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 20px;
+}
+
+select {
+  flex: 1;
+  font-size: 16px;
+  border: 8px solid #fff;
+  outline: 2px solid lightgray;
+  border-radius: 120px;
+  background-color: #fff;
+  text-align: right; /* RTL for Arabic */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for dark mode */
+}
+body.dark-mode select{
+    background-color: #1e1e1e;
+    outline-color: #121212;
+}
+button {
+  flex: 1;
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #6a5acd;
+  color: #fff;
+  border: none;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #7a5acd;
+}
+
+#results {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.movies,
+.tv-shows {
+  flex: 1;
+  text-align: right;
+  padding: 20px 15px;
+  box-shadow: 0 0 5px #d3d3d370; /* RTL for Arabic */
+}
+body.dark-mode .movies,body.dark-mode .tv-shows{
+    box-shadow: 0 0 5px #121212;
+}
+
+.movies h2,
+.tv-shows h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.movies p,
+.tv-shows p {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #d3d3d320;
+  font-size: 1.1rem;
+  /* border-bottom: 2px solid #d3d3d340; */
+}
+body.dark-mode .movies p,body.dark-mode .tv-shows p{
+    background-color: #121212;
+}
+/* Dark mode toggle switch */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Positioned on the left for RTL */
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid red; */
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked {
+  background-color: #6a5acd;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked::before {
+  width: 30px;
+  height: 30px;
+}
+@media (max-width: 500px) {
+  #results {
+    flex-direction: column;
+  }
+  .container{
+    max-width: 95%;
+  }
+}
