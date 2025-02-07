@@ -13,7 +13,12 @@ function populateYears() {
     yearSelect.appendChild(option);
   }
 }
-
+// Function to check if a string contains only Arabic characters
+function isArabic(title) {
+  // Regular expression to match Arabic characters and spaces
+  const arabicRegex = /^[\u0600-\u06FF\s]+$/;
+  return arabicRegex.test(title);
+}
 // Call the function to populate years when the page loads
 populateYears();
 
@@ -39,7 +44,8 @@ async function fetchMovies() {
     let moviesHTML = `<h2>الأفلام:</h2>`;
     if (movieData.results.length > 0) {
       movieData.results.forEach((movie) => {
-        moviesHTML += `<p>${movie.original_title}</p>`;
+        if (isArabic(movie.original_title))
+          moviesHTML += `<p>${movie.original_title}</p>`;
       });
     } else {
       moviesHTML += `<p>لا توجد أفلام متاحة لسنة ${year}.</p>`;
@@ -48,7 +54,8 @@ async function fetchMovies() {
     let tvShowsHTML = `<h2>المسلسلات:</h2>`;
     if (tvData.results.length > 0) {
       tvData.results.forEach((tv) => {
-        tvShowsHTML += `<p>${tv.original_name}</p>`;
+        if (isArabic(tv.original_name))
+          tvShowsHTML += `<p>${tv.original_name}</p>`;
       });
     } else {
       tvShowsHTML += `<p>لا توجد مسلسلات متاحة لسنة ${year}.</p>`;
