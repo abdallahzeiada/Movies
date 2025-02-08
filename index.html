@@ -20,18 +20,13 @@
             <select id="year">
                 <!-- Options will be dynamically added by JavaScript -->
             </select>
-            <button onclick="fetchMovies()">عرض</button>
+            <button onclick="fetchData()">عرض</button>
         </div>
         <div id="results">
-            <div class="movies">
-                <h2>الأفلام</h2>
-                <!-- Movies will be dynamically added here -->
-            </div>
-            <div class="tv-shows">
-                <h2>المسلسلات</h2>
-                <!-- TV shows will be dynamically added here -->
-            </div>
+            <div id="movies" class="movies"></div>
+            <div id="tv-shows" class="tv-shows"></div>
         </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
