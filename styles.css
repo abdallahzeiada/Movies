@@ -79,8 +79,15 @@ body.dark-mode select{
     background-color: #1e1e1e;
     outline-color: #121212;
 }
+.list-controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  /* border: 1px solid red; */
+}
 button {
-  flex: 1;
   padding: 8px 15px;
   font-size: 16px;
   background-color: #6a5acd;
@@ -89,12 +96,19 @@ button {
   border-radius: 500px;
   cursor: pointer;
   transition: all 0.2s;
+  
 }
 
 button:hover {
   background-color: #7a5acd;
 }
-
+.show{
+  width: 140px;
+}
+.show:disabled{
+  cursor: not-allowed;
+  background-color: #ccc;
+}
 #results {
   display: flex;
   justify-content: space-between;
@@ -114,7 +128,6 @@ body.dark-mode .movies,body.dark-mode .tv-shows{
 
 .movies h2,
 .tv-shows h2 {
-  margin-bottom: 20px;
   font-size: 22px;
 }
 

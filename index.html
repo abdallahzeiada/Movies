@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="clapperboard.png" type="image/x-icon">
     <title>الأفلام والمسلسلات المصرية</title>
 </head>
+
 <body>
     <!-- Dark mode toggle switch -->
     <div class="dark-mode-toggle">
@@ -17,17 +19,26 @@
     <div class="container">
         <h1>الأفلام والمسلسلات المصرية</h1>
         <div class="controls">
-            <select id="year">
-                <!-- Options will be dynamically added by JavaScript -->
-            </select>
-            <button onclick="fetchData()">عرض</button>
+            <select id="year"></select>
         </div>
         <div id="results">
-            <div id="movies" class="movies"></div>
-            <div id="tv-shows" class="tv-shows"></div>
+            <div id="movies" class="movies">
+                <div class="list-controls">
+                    <h2>الأفلام</h2>
+                    <button class="show" id="movies-btn" onclick="fetchMovies()">عرض الأفلام</button>
+                </div>
+            </div>
+            <div id="tv-shows" class="tv-shows">
+                <div class="list-controls">
+                    <h2>المسلسلات</h2>
+                    <button class="show" id="tv-btn" onclick="fetchTvShows()">عرض المسلسلات</button>
+                </div>
+            </div>
         </div>
-        
+
+
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
