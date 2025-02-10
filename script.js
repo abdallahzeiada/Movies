@@ -39,8 +39,8 @@ async function fetchMovies(page = 1) {
     );
     const data = await response.json();
 
-    // totalMoviePages = data.total_pages; // Get total pages
-    totalMoviePages = 1; // Get total pages
+     //totalMoviePages = data.total_pages; // Get total pages
+   totalMoviePages = 3; // Get total pages
 
     let moviesHTML = `<h2>الأفلام (${data.total_results})</h2>`;
     if (data.results.length > 0) {
@@ -85,8 +85,8 @@ async function fetchTvShows(page = 1) {
       return;
     }
 
-    totalTvPages = data.total_pages; // Get total pages
-    totalTvPages = 1; // Get total pages
+   // totalTvPages = data.total_pages; // Get total pages
+    totalTvPages = 3; // Get total pages
 
     let tvShowsHTML = `<h2>المسلسلات (${data.total_results})</h2>`;
     data.results.forEach((tv) => {
